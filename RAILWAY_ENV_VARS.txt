@@ -1,0 +1,51 @@
+========================================
+RAILWAY ENVIRONMENT VARIABLES
+========================================
+
+Copy these to Railway Dashboard → Your Project → Variables
+
+REQUIRED:
+---------
+DATABASE_URL=postgresql://postgres:[YOUR-PASSWORD]@db.xxxx.supabase.co:5432/postgres
+REDIS_URL=redis://default:[PASSWORD]@xxxx.upstash.io:6379
+
+OPTIONAL (has defaults):
+------------------------
+JWT_SECRET=your_random_secret_key_here
+DEBUG=False
+ENVIRONMENT=production
+CORS_ORIGINS=["https://your-frontend-url.vercel.app"]
+
+========================================
+HOW TO GET THESE VALUES:
+========================================
+
+1. DATABASE_URL (Supabase):
+   - Go to https://supabase.com
+   - Your Project → Settings → Database
+   - Copy "Connection string" (URI format)
+   - Replace [YOUR-PASSWORD] with your actual password
+
+2. REDIS_URL (Upstash):
+   - Go to https://upstash.com
+   - Your Redis Database → Details
+   - Copy the connection string
+
+3. JWT_SECRET (Generate in PowerShell):
+   [Convert]::ToBase64String((1..32 | ForEach-Object { Get-Random -Minimum 0 -Maximum 256 }))
+
+========================================
+DEPLOYMENT STATUS:
+========================================
+
+✅ Code pushed to GitHub
+✅ Dockerfile removed (Railway uses Nixpacks)
+✅ nixpacks.toml added
+✅ Procfile added
+✅ simple_main.py updated
+
+🔄 NEXT: Set environment variables in Railway
+🔄 THEN: Railway will auto-deploy
+
+========================================
+
