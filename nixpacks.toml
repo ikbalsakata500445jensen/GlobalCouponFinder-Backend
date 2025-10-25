@@ -3,7 +3,10 @@ nixPkgs = ["python311"]
 
 [phases.install]
 cmds = [
-  "python -m venv .venv",
+  "rm -rf /usr/bin/python3*",
+  "ln -s /usr/bin/python3.11 /usr/bin/python3",
+  "ln -s /usr/bin/python3.11 /usr/bin/python",
+  "python3.11 -m venv .venv",
   "source .venv/bin/activate",
   "pip install --upgrade pip",
   "pip install -r requirements.txt"
