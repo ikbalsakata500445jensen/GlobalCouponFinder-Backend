@@ -4,11 +4,11 @@ from fastapi.middleware.gzip import GZipMiddleware
 from slowapi import Limiter, _rate_limit_exceeded_handler
 from slowapi.util import get_remote_address
 from slowapi.errors import RateLimitExceeded
-from config import settings
+import os
 
 # Create FastAPI app
 app = FastAPI(
-    title=settings.APP_NAME,
+    title="GlobalCouponFinder API",
     version="1.0.0",
     docs_url="/api/docs",
     redoc_url="/api/redoc",
@@ -36,7 +36,7 @@ app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
 @app.get("/")
 def root():
     return {
-        "message": f"Welcome to {settings.APP_NAME} API",
+        "message": "Welcome to GlobalCouponFinder API",
         "version": "1.0.0",
         "docs": "/api/docs"
     }
@@ -44,7 +44,7 @@ def root():
 # Health check
 @app.get("/health")
 def health_check():
-    return {"status": "healthy", "service": settings.APP_NAME}
+    return {"status": "healthy", "service": "GlobalCouponFinder API"}
 
 if __name__ == "__main__":
     import uvicorn
