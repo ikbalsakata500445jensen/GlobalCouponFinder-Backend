@@ -1,0 +1,19 @@
+[phases.setup]
+nixPkgs = ["python311"]
+
+[phases.install]
+cmds = [
+  "python -m venv .venv",
+  "source .venv/bin/activate",
+  "pip install --upgrade pip",
+  "pip install -r requirements.txt"
+]
+
+[phases.build]
+cmds = [
+  "source .venv/bin/activate",
+  "python -c 'import sys; print(f\"Python version: {sys.version}\")'"
+]
+
+[start]
+cmd = "source .venv/bin/activate && python main.py"
