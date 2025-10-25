@@ -1,6 +1,4 @@
-# This is a backup Dockerfile for Railway if Nixpacks continues to fail
-# Railway should use Nixpacks, but this is a fallback
-
+# Force Railway to use Docker instead of Nixpacks
 FROM python:3.11.9-slim
 
 # Set working directory

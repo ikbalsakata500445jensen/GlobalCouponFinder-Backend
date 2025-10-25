@@ -1,6 +1,4 @@
-# Force Railway to ignore Dockerfile and use Nixpacks
-Dockerfile
-Dockerfile.*
+# Allow Dockerfile to be used
 docker-compose.yml
 .dockerignore
 
