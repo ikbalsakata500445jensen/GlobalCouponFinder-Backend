@@ -1,6 +1,6 @@
 # FastAPI and server
 fastapi==0.104.1
-uvicorn[standard]==0.24.0
+uvicorn==0.24.0
 
 # Database
 sqlalchemy==2.0.23
@@ -11,14 +11,14 @@ python-jose[cryptography]==3.3.0
 passlib[bcrypt]==1.7.4
 python-multipart==0.0.6
 
-# Pydantic (simplified)
+# Pydantic
 pydantic==2.5.0
 pydantic-settings==2.1.0
 
 # Redis
 redis==4.6.0
 
-# Web Scraping (simplified)
+# Web Scraping
 beautifulsoup4==4.12.2
 requests==2.31.0
 fake-useragent==1.4.0
