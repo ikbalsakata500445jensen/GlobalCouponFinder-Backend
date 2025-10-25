@@ -23,4 +23,4 @@ COPY . .
 EXPOSE 8000
 
 # Start command
-CMD ["python", "main.py"]
+CMD ["python", "simple_main.py"]

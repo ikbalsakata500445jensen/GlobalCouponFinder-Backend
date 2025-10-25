@@ -16,4 +16,4 @@ cmds = [
 ]
 
 [start]
-cmd = "source .venv/bin/activate && python main.py"
+cmd = "source .venv/bin/activate && python simple_main.py"

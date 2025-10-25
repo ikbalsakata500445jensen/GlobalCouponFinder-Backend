@@ -2,7 +2,7 @@ from fastapi import APIRouter, Depends, Query, Request
 from sqlalchemy.orm import Session
 from typing import Optional, List
 from database import get_db
-from models_sqlite import Store, Coupon
+from models import Store, Coupon
 from countries import get_countries_by_region, get_all_countries
 from slowapi import Limiter
 from slowapi.util import get_remote_address
