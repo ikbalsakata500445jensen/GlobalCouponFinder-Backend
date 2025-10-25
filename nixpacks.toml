@@ -1,8 +1,11 @@
+# Force Python 3.11 and ensure pip is available
 [phases.setup]
-nixPkgs = ["python311", "postgresql", "pip"]
+nixPkgs = ["python311", "postgresql", "pip", "python311Packages.pip"]
 
 [phases.install]
 cmds = [
+  "python3.11 --version",
+  "python3.11 -m pip --version", 
   "python3.11 -m pip install --upgrade pip",
   "python3.11 -m pip install -r requirements.txt"
 ]
