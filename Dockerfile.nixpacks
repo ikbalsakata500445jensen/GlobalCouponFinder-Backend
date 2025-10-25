@@ -1,4 +1,4 @@
-# FORCE RAILWAY TO USE DOCKER - NO NIXPACKS
+# Force Railway to use Docker instead of Nixpacks
 FROM python:3.11.9-slim
 
 # Set working directory
