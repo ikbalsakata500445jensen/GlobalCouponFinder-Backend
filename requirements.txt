@@ -11,9 +11,9 @@ python-jose[cryptography]==3.3.0
 passlib[bcrypt]==1.7.4
 python-multipart==0.0.6
 
-# Pydantic
-pydantic==2.5.0
-pydantic-settings==2.1.0
+# Pydantic (use older version for Python 3.13 compatibility)
+pydantic==2.4.2
+pydantic-settings==2.0.3
 
 # Redis
 redis==4.6.0
