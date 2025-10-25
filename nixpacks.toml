@@ -1,19 +1,8 @@
 [phases.setup]
-nixPkgs = ["python311"]
+nixPkgs = ["python311", "postgresql"]
 
 [phases.install]
-cmds = [
-  "python3.11 -m venv .venv",
-  "source .venv/bin/activate",
-  "pip install --upgrade pip",
-  "pip install --no-cache-dir -r requirements.txt"
-]
-
-[phases.build]
-cmds = [
-  "source .venv/bin/activate",
-  "python -c 'import sys; print(f\"Python version: {sys.version}\")'"
-]
+cmds = ["pip install -r requirements.txt"]
 
 [start]
-cmd = "source .venv/bin/activate && python simple_main.py"
+cmd = "uvicorn simple_main:app --host 0.0.0.0 --port $PORT"

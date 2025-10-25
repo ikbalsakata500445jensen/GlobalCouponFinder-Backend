@@ -19,6 +19,7 @@ class Settings(BaseSettings):
     UPSTASH_REDIS_URL: Optional[str] = None
     
     # JWT
+    JWT_SECRET: str = "default-secret-key-change-in-production"
     JWT_ALGORITHM: str = "HS256"
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 60 * 24 * 7  # 7 days
     
